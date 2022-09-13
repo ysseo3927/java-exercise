@@ -1,27 +1,26 @@
 package com.example;
 
-import com.exercise.*;
+import com.cooking.ChickenRecipe;
+import com.cooking.CookingRecipe;
+import com.cooking.PepperoniPizzaRecipe;
+import com.cooking.PineapplePizzaRecipe;
 
 import java.io.IOException;
 
 public class Example {
 
     public static void main(String[] args) throws IOException {
-        Generic g = new Generic();
-        g.<Member>method1(new com.exercise.Member());
-        Generic2<Member> t = new Generic2<>();
-        t.setT(new Member());
-        t.getLog();
 
-        Generic2<NomalMember> t2 = new Generic2<>();
-        t2.setT(new NomalMember());
-        t2.getLog();
-        Generic2<PremiumMember> t3 = new Generic2<>();
-        t3.setT(new PremiumMember());
-        t3.getLog();
+        CookingRecipe chicken = new ChickenRecipe();
+        chicken.makeCuisine();
+        System.out.println("-----------------");
 
+        CookingRecipe PepperoniPizza = new PepperoniPizzaRecipe();
+        PepperoniPizza.makeCuisine();
 
-
+        System.out.println("-----------------");
+        CookingRecipe pineapplePizze = new PineapplePizzaRecipe();
+        pineapplePizze.makeCuisine();
     }
 
 }
