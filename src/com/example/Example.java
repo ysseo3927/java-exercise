@@ -1,26 +1,21 @@
 package com.example;
 
-import com.cooking.ChickenRecipe;
-import com.cooking.CookingRecipe;
-import com.cooking.PepperoniPizzaRecipe;
-import com.cooking.PineapplePizzaRecipe;
-
 import java.io.IOException;
 
 public class Example {
 
     public static void main(String[] args) throws IOException {
+        //Example<확정 타입> a = new Example<확정 타입>();
+        GenericExample<String> b = new GenericExample<String>();
+        b.setT("Hello Generic");
+        String t1 = b.getT();
+        System.out.println(t1);
 
-        CookingRecipe chicken = new ChickenRecipe();
-        chicken.makeCuisine();
-        System.out.println("-----------------");
+        GenericExample c = new GenericExample(); //Example<Object> c = new Example<Object>();와 동일한 표현
+        c.setT("Hello Generic");
+        String t2 = (String)c.getT();
+        System.out.println(t2);
 
-        CookingRecipe PepperoniPizza = new PepperoniPizzaRecipe();
-        PepperoniPizza.makeCuisine();
-
-        System.out.println("-----------------");
-        CookingRecipe pineapplePizze = new PineapplePizzaRecipe();
-        pineapplePizze.makeCuisine();
     }
 
 }
